@@ -12,8 +12,8 @@ li {
 .cube {
     width: 99%;
     height: 700px;
-    border: solid;
-    transform: rotateX(45deg) rotateZ(2deg);
+    /*border: solid;*/
+    transform: rotateX(62deg) rotateZ(19deg) translateZ(-200px);
     transform-style: preserve-3d;
 }
 
@@ -21,8 +21,10 @@ li {
     width: 50px;
     transform-style: preserve-3d;
     transform-origin: 25px 25px;
-    margin: 20px;
+    margin: 50px;
     height: 50px;
+    cursor: pointer;
+    transition: all .2s;
 }
 
 .cubic li {
@@ -32,6 +34,17 @@ li {
     background: url("cube.jpg");
     background-size: 100% 100%;
     box-shadow: 0px 0px 0.5px #cecece;
+    transition: all .2s;
+}
+
+.cubic:hover {
+    transform: translateZ(20px);
+}
+
+.cubic:hover::after {
+    content: "%";
+    width: 50px;
+    height: 50px;
 }
 
 .cubic li::after {
@@ -39,11 +52,11 @@ li {
 }
 
 .front {
-    transform: translateZ(25px);
+    transform: rotateX(90deg) translateZ(-25px);
 }
 
 .back {
-    transform: translateZ(-25px);
+    transform: rotateX(90deg) translateZ(25px);
 }
 
 .left {
@@ -55,9 +68,9 @@ li {
 }
 
 .top {
-    transform: rotateX(90deg) translateZ(25px);
+    transform: translateZ(25px);
 }
 
 .bottom {
-    transform: rotateX(90deg) translateZ(-25px);
+    transform: translateZ(-25px);
 }
